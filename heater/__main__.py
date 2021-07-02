@@ -21,7 +21,7 @@
 from heater.utils import purify_folder_name
 from heater.constants import PROJECT_TYPES
 from heater.generators import generate
-from heater.ux import ask_input, initialize_heater
+from heater.ux import ask_input, initialize_heater, ask_token
 
 import time
 
@@ -36,7 +36,7 @@ def main():
         f"What library does {project_name} use? Discord.py (d) or Hikari (h)",
         PROJECT_TYPES,
     )
-    bot_token = ask_input("Enter your bot token")
+    bot_token = ask_token("Enter your bot token")
     prefix = ask_input("Enter your bot's prefix")
     dependencies = ask_input(
         "Enter additional dependencies (comma separated)", optional=True
