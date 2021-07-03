@@ -23,6 +23,7 @@ from heater.utils import is_blank
 import heater
 import typing
 import platform
+import getpass
 
 
 def initialize_heater():
@@ -56,3 +57,8 @@ def ask_input(
             print("Invalid input, please try again.")
             continue
         return inp
+
+
+def ask_token(message: str) -> str:
+    """Asks for token in a sensitive manner ie, without echoing"""
+    return getpass.getpass(message + " >> ")
