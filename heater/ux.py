@@ -61,4 +61,4 @@ def ask_input(
 
 def ask_token(message: str) -> str:
     """Asks for token in a sensitive manner ie, without echoing"""
-    return getpass.getpass(message)
+    return getpass.getpass(message + " >> ")
